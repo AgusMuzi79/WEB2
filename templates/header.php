@@ -12,8 +12,6 @@
 </head>
 <body>
     <header>
-        <h1>Lista de Tareas</h1>
-        <div class="btn_menu"><a>Menú</a></div>
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="">TUDAI - TODOList</a>
