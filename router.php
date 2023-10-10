@@ -10,12 +10,17 @@
         $action = 'listar'; // acción por defecto si no envían
     }
 
+    
     $params = explode('/', $action);
+
 
     // determina que camino seguir según la acción
     switch ($params[0]) {
         case 'listar':
             showTasks();
+            break;
+        case 'agregar':
+            addTask();
             break;
         default:
             echo('404 Page not found');

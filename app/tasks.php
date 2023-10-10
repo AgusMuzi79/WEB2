@@ -6,6 +6,7 @@ function showTasks() {
 
     $tasks = getTasks();
 
+    require 'templates/form_alta.php';
     ?>
 
     <ul class = "list-group">
@@ -20,4 +21,21 @@ function showTasks() {
 
 
     require 'templates/footer.php';
+}
+
+function addTask() {
+    // TODO: validacion de datos
+
+    $title = $_POST['title'];
+    $priority = $_POST['priority'];
+    $description = $_POST['description'];
+
+    $id = insertTask($title, $priority, $description);
+
+    if ($id) {
+        header('Location: ' . BASE_URL);
+    } else {
+        echo "Error al insertar la tarea";
+    }
+    
 }
