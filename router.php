@@ -22,6 +22,12 @@
         case 'agregar':
             addTask();
             break;
+        case 'eliminar':
+            removeTask($params[1]);
+            break;
+        case 'finalizar':
+            finishTask($params[1]);
+            break;
         default:
             echo('404 Page not found');
             break;

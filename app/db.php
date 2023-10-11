@@ -5,7 +5,6 @@
 
  function getConection() {
     return new PDO ('mysql:host=localhost;dbname=db_tareas;charset=utf8', 'root', '');
-
  }
  function getTasks() {
     $db = getConection();
@@ -26,4 +25,11 @@ function insertTask($title, $priority, $description) {
     $query->execute([$title, $priority, $description]);
     
     return $db->lastInsertId();
+}
+
+function deleteTask($id) {
+    $db = getConection();
+
+    $query = $db -> prepare ('DELETE FROM tareas WHERE id = ?');
+    $query -> execute ([$id]);
 }
